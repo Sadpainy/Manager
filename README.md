@@ -31,6 +31,41 @@ It displays the tasks, activities, and permissions of every app installed on you
 - Developers who need to inspect tasks and permissions during testing
 - Anyone who cares about privacy and wants a clear view of app permissions
 
+## Usages
+
+Push in System
+
+```bash
+# Access adb shell
+adb shell
+
+# Get Root
+su
+
+# Read-Write
+mount -o remount,rw /system
+
+# Copy In System
+mkdir -p /system/app/Manager
+cp /storage/emulated/0/Android/data/com.android.tasks/manager.apk /system/app/Manager/Manager.apk
+chmod 644 /system/app/Manager/Manager.apk
+
+# Copy In Privilege APP
+mkdir -p /system/priv-app/Manager
+cp /storage/emulated/0/Android/data/com.android.tasks/manager.apk /system/priv-app/Manager/Manager.apk
+chmod 644 /system/priv-app/Manager/Manager.apk
+
+# Read-Only
+mount -o remount,ro /system
+
+# Then, Shutdown.
+reboot
+
+# Last, Verify it.
+adb shell pm list packages | grep com.android.tasks
+adb shell dumpsys package com.android.tasks | grep -E "codePath|flags"
+```
+
 ## Notes
 
 - No root access is required
