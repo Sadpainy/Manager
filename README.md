@@ -40,4 +40,4 @@ It displays the tasks, activities, and permissions of every app installed on you
 
 ## License
 
-GNU Affero General Public License, version 3 and LICENSE.Stuxnet `(Must-Read, Important!)`.
+GNU Affero General Public License, version 3 and **LICENSE.Manager** `(Must-Read, Important!)`.
