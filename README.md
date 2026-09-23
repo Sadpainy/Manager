@@ -1,5 +1,5 @@
 # Manager
-![Build](https://img.shields.io/badge/Build-passing-brightgreen?style=plastic&labelColor=FF6D00)
+![Build](https://img.shields.io/badge/Build-passing-brightgreen?style=plastic&logo=githubactions&logoColor=white&labelColor=555555)
 ![Tests](https://img.shields.io/badge/Tests-passing-brightgreen?style=plastic&labelColor=555555)
 ![License](https://img.shields.io/badge/License-AGPL_v3.0-blue?style=plastic&logo=gnu&logoColor=white&labelColor=555555)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=plastic&logo=android&logoColor=white&labelColor=3DDC84)
