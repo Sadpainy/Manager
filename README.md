@@ -42,6 +42,9 @@ adb shell
 # Get Root
 su
 
+# SELinux Disable
+setenforce 0
+
 # Read-Write
 mount -o remount,rw /system
 
@@ -57,6 +60,9 @@ chmod 644 /system/priv-app/Manager/Manager.apk
 
 # Read-Only
 mount -o remount,ro /system
+
+# Enforcing SELinux
+setenforce 1
 
 # Then, Shutdown.
 reboot
