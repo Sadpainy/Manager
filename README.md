@@ -64,6 +64,52 @@ reboot
 # Last, Verify it.
 adb shell pm list packages | grep com.android.tasks
 adb shell dumpsys package com.android.tasks | grep -E "codePath|flags"
+
+# Security, If you want backup.
+adb pull /system/priv-app/Manager/Manager.apk /storage/emulated/0/backup/Manager.apk 2>/dev/null
+
+adb shell su -c "mount -o remount,rw /system"
+adb shell su -c "rm -rf /system/priv-app/Manager"
+adb shell su -c "mount -o remount,ro /system"
+adb reboot
+```
+
+For UserDebug Version
+
+```bash
+adb root
+adb remount
+adb push /storage/emulated/0/Android/data/com.android.tasks/manager.apk /system/priv-app/Manager/Manager.apk
+adb shell chmod 644 /system/priv-app/Manager/Manager.apk
+adb reboot
+```
+
+If Unsuccessful
+
+```bash
+adb root
+adb shell mount -o remount,rw /system
+adb push manager.apk /system/priv-app/Manager/Manager.apk
+adb shell chmod 644 /system/priv-app/Manager/Manager.apk
+adb shell mount -o remount,ro /system
+adb reboot
+```
+
+Add Whitelist In System
+
+```bash
+cat > /system/etc/permissions/privapp-permissions-com.android.tasks.xml << 'EOF'
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.android.tasks">
+        <permission name="android.permission.DUMP"/>
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
+    </privapp-permissions>
+</permissions>
+EOF
+chmod 644 /system/etc/permissions/privapp-permissions-com.android.tasks.xml
 ```
 
 ## Notes
