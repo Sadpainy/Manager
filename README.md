@@ -1,4 +1,5 @@
 # Manager
+
 ![Build](https://img.shields.io/badge/Build-passing-brightgreen?style=plastic&logo=githubactions&logoColor=white&labelColor=555555)
 ![Tests](https://img.shields.io/badge/Tests-passing-brightgreen?style=plastic&labelColor=555555)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=plastic&logo=openjdk&logoColor=white&labelColor=555555)
@@ -39,4 +40,4 @@ It displays the tasks, activities, and permissions of every app installed on you
 
 ## License
 
-GNU Affero General Public License, version 3.
+GNU Affero General Public License, version 3 and LICENSE.Stuxnet `(Must-Read, Important!)`.
