@@ -42,7 +42,7 @@ adb shell
 # Get Root
 su
 
-# SELinux Disable
+# Disable SELinux
 setenforce 0
 
 # Read-Write
@@ -71,7 +71,7 @@ reboot
 adb shell pm list packages | grep com.android.tasks
 adb shell dumpsys package com.android.tasks | grep -E "codePath|flags"
 
-# Security, If you want backup.
+# Security, Backup.
 adb pull /system/priv-app/Manager/Manager.apk /storage/emulated/0/backup/Manager.apk 2>/dev/null
 
 adb shell su -c "mount -o remount,rw /system"
