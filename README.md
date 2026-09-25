@@ -120,7 +120,7 @@ chmod 644 /system/etc/permissions/privapp-permissions-com.android.tasks.xml
 
 ## Notes
 
-- No root access is required
+- No root access is required (Only Edit Permission Needs)
 - No internet connection is used
 - No data is collected or sent anywhere
 - No advertisements, no tracking
